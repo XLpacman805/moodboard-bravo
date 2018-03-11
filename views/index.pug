@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= 'Moodboard Bravo'
+  h2 #{something}
+  p Welcome to #{title}
+
+      form()
+          p
+              | IMAGE ONE:
+              input(type='text', name='imageone', value='')
+              |          IMAGE TWO:
+              input(type='text', name='imagetwo', value='')
+              |          IMAGE THREE:
+              input(type='text', name='imagethree', value='')
+              | IMAGE FOUR
+              input(type='text', name='imagefour', value='')
+          input(type='submit', value='Submit')
+
+  if something
+      p
+        img(src=something, width='250vw', height='auto')
