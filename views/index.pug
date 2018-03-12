@@ -2,7 +2,6 @@ extends layout
 
 block content
   h1= 'Moodboard Bravo'
-  h2 #{something}
   p Welcome to #{title}
 
       form()
@@ -15,8 +14,23 @@ block content
               input(type='text', name='imagethree', value='')
               | IMAGE FOUR
               input(type='text', name='imagefour', value='')
+              | IMAGE FIVE
+              input(type='text', name='imagefive', value='')
+              | IMAGE SIX
+              input(type='text', name='imagesix', value='')
+              | IMAGE SEVEN
+              input(type='text', name='imageseven', value='')
+              | IMAGE EIGHT
+              input(type='text', name='imageeight', value='')
           input(type='submit', value='Submit')
 
-  if something
-      p
-        img(src=something, width='250vw', height='auto')
+  if imageOne
+      div(class='container')
+        img(src=imageOne, class='image')
+        img(src=imageTwo, class='image')
+        img(src=imageThree, class='image')
+        img(src=imageFour, class='image')
+        img(src=imageFive, class='image')
+        img(src=imageSix, class='image')
+        img(src=imageSeven, class='image')
+        img(src=imageEight, class='image')
