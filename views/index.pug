@@ -6,31 +6,6 @@ block content
 
       form()
           p
-              | IMAGE ONE:
-              input(type='text', name='imageone', value='')
-              |          IMAGE TWO:
-              input(type='text', name='imagetwo', value='')
-              |          IMAGE THREE:
-              input(type='text', name='imagethree', value='')
-              | IMAGE FOUR
-              input(type='text', name='imagefour', value='')
-              | IMAGE FIVE
-              input(type='text', name='imagefive', value='')
-              | IMAGE SIX
-              input(type='text', name='imagesix', value='')
-              | IMAGE SEVEN
-              input(type='text', name='imageseven', value='')
-              | IMAGE EIGHT
-              input(type='text', name='imageeight', value='')
+              | ENTER IMGUR ALBUM LINK:
+              input(type='text', name='albumlink', value='')
           input(type='submit', value='Submit')
-
-  if imageOne
-      div(class='container')
-        img(src=imageOne, class='image')
-        img(src=imageTwo, class='image')
-        img(src=imageThree, class='image')
-        img(src=imageFour, class='image')
-        img(src=imageFive, class='image')
-        img(src=imageSix, class='image')
-        img(src=imageSeven, class='image')
-        img(src=imageEight, class='image')
