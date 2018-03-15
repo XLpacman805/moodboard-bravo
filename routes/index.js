@@ -10,15 +10,15 @@ router.get('/', function(req, res, next) {
       reject("Something went wrong");
     });
 
-    imgurAlbum.then((albumHash) => { // then when I get the link, do this.
-      console.log(imgur.test(albumHash));
-    })
+    imgurAlbum
+        .then((albumHash) => {
+            return albumHash;
+        })
         .catch(reason => console.log(reason)); // If for some reason you catch an error, log the reason.
 
 
-  res.render('index', {
-    title: 'Moodboard Bravo'
-  });
+    res.render('index', {title: 'Moodboard Bravo', test: imgurAlbum});
 });
+
 
 module.exports = router;
