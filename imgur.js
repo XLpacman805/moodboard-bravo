@@ -1,0 +1,1 @@
+exports.test = (x) => x + " HELLO WORLD";
