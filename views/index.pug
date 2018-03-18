@@ -4,9 +4,9 @@ block content
     h1= 'Moodboard Bravo'
     h2= test
     p Welcome to #{title}
-    form()
+    form(action='/moodboard')
         p
-            | ENTER IMGUR ALBUM LINK:
+            | ENTER IMGUR ALBUM INK:
             input(type='text', name='albumlink', value='' id='albumlink')
             button(id='submit-button') Submit
 

@@ -5,7 +5,8 @@ const imgur = require('../imgur.js');
 /* GET moodboard page. */
 
 router.get('/', (req, res, next) => {
-    res.end('HELLO WORLD');
+    let albumHash = req.query.albumlink.toString().replace("https://imgur.com/a/", "");
+    res.end(albumHash);
 
 });
 
