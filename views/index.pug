@@ -1,12 +1,13 @@
 extends layout
 
 block content
-  h1= 'Moodboard Bravo'
-  h2= test
-  p Welcome to #{title}
+    h1= 'Moodboard Bravo'
+    h2= test
+    p Welcome to #{title}
+    form()
+        p
+            | ENTER IMGUR ALBUM LINK:
+            input(type='text', name='albumlink', value='' id='albumlink')
+            button(id='submit-button') Submit
 
-      form()
-          p
-              | ENTER IMGUR ALBUM LINK:
-              input(type='text', name='albumlink', value='')
-          input(type='submit', value='Submit')
+    script(src='/javascripts/index.js')
