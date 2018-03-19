@@ -9,11 +9,9 @@ router.get('/', (req, res, next) => {
     let albumHash = req.query.albumlink.toString().replace("https://imgur.com/a/", "");
     // Gets an Array of all images from the album.
     imgur.getImagesFromAlbum(albumHash, images => {
-        console.log(images);
-
+        let img1 = images[0].link;
+        res.render('moodboard', {imageOne: img1});
     });
-
-    res.end("dosdksdfk");
 });
 
 module.exports = router;
