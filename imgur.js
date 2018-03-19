@@ -1,11 +1,19 @@
-const request = require('request');
+const https = require('https');
 
 exports.test = (x) => x + " HELLO WORLD";
 
-exports.getImagesFromAlbum = (albumHash) => {
-    return request('https://api.imgur.com/3/album/' + albumHash +'/images/?client_id=' + process.env.IMGUR_CLIENT_ID, (err, res, body) =>{
-        if (err) throw err;
+// Sends GET request to imgur api for our album. A callback must be passed into this function to use the GET response.
+exports.getImagesFromAlbum = (albumHash, cb) => {
+   https.get('https://api.imgur.com/3/album/' + albumHash + '/images/?client_id=' + process.env.IMGUR_CLIENT_ID,
+       res =>{
+            let body = '';
+            res.on('data', data => {
+                body += data;
+            });
 
-        return JSON.parse(body); // wow
-    });
+            res.on('end', () => {
+                body = JSON.parse(body);
+                cb(body.data);
+            });
+       });
 };
