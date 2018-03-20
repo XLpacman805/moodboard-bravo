@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1(class="center-text") #{albumTitle}
+    h2(class="center-text") #{albumDescription}
+
+    div(class='container')
+        each imgSrc in images
+            img(style='image' src=imgSrc.link)
