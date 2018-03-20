@@ -1,5 +1,8 @@
 extends layout
 
 block content
-    h1 'HELLO WORLD'
-    img(src=imageOne)
+    h1 HELLO WORLD
+
+    div(class='container')
+        each imgSrc in images
+            img(style='image' src=imgSrc.link)
