@@ -1,9 +1,11 @@
 extends layout
 
 block content
+    script(src="/javascripts/dropzone.js")
+
     h1= 'Moodboard Bravo'
     h2= test
     p Welcome to #{title}
 
-    div(id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);")
-        p drop one or more files to this drop zone.
+    form(action="/file-upload" class="dropzone" id="my-awesome-dropzone")
+        input(type="file" name="file")
