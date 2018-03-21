@@ -22,3 +22,9 @@ a {
 .center-text {
     text-align: center;
 }
+
+#drop_zone {
+    border: 0.25em dashed blue;
+    width: 50vw;
+    height: 50vh;
+}

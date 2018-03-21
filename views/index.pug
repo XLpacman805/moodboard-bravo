@@ -4,8 +4,6 @@ block content
     h1= 'Moodboard Bravo'
     h2= test
     p Welcome to #{title}
-    form(action='/moodboard')
-        p
-            | ENTER IMGUR ALBUM INK:
-            input(type='text', name='albumlink', value='' id='albumlink')
-            button(id='submit-button') Submit
+
+    div(id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);")
+        p drop one or more files to this drop zone.
