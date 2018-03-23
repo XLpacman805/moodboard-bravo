@@ -2871,7 +2871,11 @@ Dropzone.version = "5.3.1";
 // And in html:
 //
 //     <form action="/upload" id="my-dropzone-element-id" class="dropzone"></form>
-Dropzone.options = {};
+Dropzone.options.myDropzoneElementId = {
+    paramName: "image", // The name that will be used to transfer the file
+    maxFilesize: 10, // MB
+    headers: {'Authorization': 'Client-ID 9ec16c46f71e88f'}
+};
 
 // Returns the options for an element or undefined if none available.
 Dropzone.optionsForElement = function (element) {

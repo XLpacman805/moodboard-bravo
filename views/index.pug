@@ -1,11 +1,16 @@
 extends layout
 
 block content
-    script(src="/javascripts/dropzone.js")
 
     h1= 'Moodboard Bravo'
     h2= test
     p Welcome to #{title}
+    button(id="myButton") #myButton
 
-    form(action="/file-upload" class="dropzone" id="my-awesome-dropzone")
-        input(type="file" name="file")
+    form(action="https://api.imgur.com/3/image" id="my-dropzone-element-id" class="dropzone" method="POST"
+    enctype="multipart/form-data")
+        input(type="file" name="image")
+
+block scripts
+    script(src="/javascripts/dropzone.js")
+    script(src="/javascripts/client.js")
