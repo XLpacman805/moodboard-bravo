@@ -232,7 +232,7 @@ var Dropzone = function (_Emitter) {
          * **NOTE**: If you have the option  `uploadMultiple` set to `true`, then
          * Dropzone will append `[]` to the name.
          */
-        paramName: "file",
+        paramName: "image",
 
         /**
          * Whether thumbnails for images should be generated
@@ -2433,8 +2433,9 @@ var Dropzone = function (_Emitter) {
 
       var headers = {
         "Accept": "application/json",
-        "Cache-Control": "no-cache",
-        "X-Requested-With": "XMLHttpRequest"
+          "Authorization": "Client-ID 9ec16c46f71e88f"
+        // "Cache-Control": "no-cache",
+        // "X-Requested-With": "XMLHttpRequest"
       };
 
       if (this.options.headers) {
@@ -2871,11 +2872,7 @@ Dropzone.version = "5.3.1";
 // And in html:
 //
 //     <form action="/upload" id="my-dropzone-element-id" class="dropzone"></form>
-Dropzone.options.myDropzoneElementId = {
-    paramName: "image", // The name that will be used to transfer the file
-    maxFilesize: 10, // MB
-    headers: {'Authorization': 'Client-ID 9ec16c46f71e88f'}
-};
+Dropzone.options = {};
 
 // Returns the options for an element or undefined if none available.
 Dropzone.optionsForElement = function (element) {
